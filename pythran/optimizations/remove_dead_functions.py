@@ -9,7 +9,7 @@ class RemoveDeadFunctions(Transformation):
     """
     Remove useless local functions
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend, metadata
     >>> pm = passmanager.PassManager("test")
     >>> node = ast.parse("def foo(): return 1")

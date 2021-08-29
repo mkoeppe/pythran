@@ -1,6 +1,6 @@
 """ Common function use for AST manipulation. """
 
-import gast as ast
+import ast
 from pythran.tables import MODULES
 from pythran.conversion import mangle, demangle
 from functools import reduce
@@ -56,7 +56,7 @@ def path_to_attr(path):
     """
     Transform path to ast.Attribute.
 
-    >>> import gast as ast
+    >>> import ast
     >>> path = ('builtins', 'my', 'constant')
     >>> value = path_to_attr(path)
     >>> ref = ast.Attribute(
@@ -95,7 +95,7 @@ def get_variable(assignable):
     """
     Return modified variable name.
 
-    >>> import gast as ast
+    >>> import ast
     >>> ref = ast.Subscript(
     ...     value=ast.Subscript(
     ...         value=ast.Name('a', ast.Load(), None, None),

@@ -1,7 +1,7 @@
 """ Module Analysing code to extract positive subscripts from code.  """
 # TODO check bound of while and if for more accurate values.
 
-import gast as ast
+import ast
 from collections import defaultdict
 from contextlib import contextmanager
 from functools import reduce
@@ -251,7 +251,7 @@ class RangeValuesBase(ModuleAnalysis):
 
         TODO : We could exclude some operand with this range information...
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -269,7 +269,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_BinOp(self, node):
         """ Combine operands ranges for given operator.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -287,7 +287,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_UnaryOp(self, node):
         """ Update range with given unary operation.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -325,7 +325,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_IfExp(self, node):
         """ Use worst case for both possible values.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -345,7 +345,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_Compare(self, node):
         """ Boolean are possible index.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -377,7 +377,7 @@ class RangeValuesBase(ModuleAnalysis):
                                [ast.Name('y', ast.Load(), None, None)])
             fake = ast.Expression(fake)
             ast.fix_missing_locations(fake)
-            expr = compile(ast.gast_to_ast(fake), '<range_values>', 'eval')
+            expr = compile(fake, '<range_values>', 'eval')
             res.append(eval(expr, {'x': curr, 'y': comparator}))
         if all(res):
             return self.add(node, Interval(1, 1))
@@ -389,7 +389,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_Call(self, node):
         """ Function calls are not handled for now.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -461,7 +461,7 @@ class RangeValuesBase(ModuleAnalysis):
     def visit_FunctionDef(self, node):
         """ Set default range value for globals and attributes.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(a, b): pass")
         >>> pm = passmanager.PassManager("test")
@@ -499,7 +499,7 @@ class RangeValuesSimple(RangeValuesBase):
     It is flow sensitive and aliasing is not taken into account as integer
     doesn't create aliasing in Python.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('''
     ... def foo(a):
@@ -548,7 +548,7 @@ class RangeValuesSimple(RangeValuesBase):
         """
         Constraint the range of variables
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(a): assert a >= 1; b = a + 1")
         >>> pm = passmanager.PassManager("test")
@@ -567,7 +567,7 @@ class RangeValuesSimple(RangeValuesBase):
 
         We do not handle container values.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(): a = b = 2")
         >>> pm = passmanager.PassManager("test")
@@ -588,7 +588,7 @@ class RangeValuesSimple(RangeValuesBase):
     def visit_AugAssign(self, node):
         """ Update range value for augassigned variables.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(): a = 2; a -= 1")
         >>> pm = passmanager.PassManager("test")
@@ -607,7 +607,7 @@ class RangeValuesSimple(RangeValuesBase):
     def visit_For(self, node):
         """ Handle iterate variable in for loops.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -648,7 +648,7 @@ class RangeValuesSimple(RangeValuesBase):
     def visit_loop(self, node, cond=None):
         """ Handle incremented variables in loop body.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -704,7 +704,7 @@ class RangeValuesSimple(RangeValuesBase):
     def visit_If(self, node):
         """ Handle iterate variable across branches
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> pm = passmanager.PassManager("test")
 
@@ -800,7 +800,7 @@ class RangeValues(RangeValuesBase):
     It is flow sensitive and aliasing is not taken into account as integer
     doesn't create aliasing in Python.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('''
     ... def foo(a):
@@ -878,7 +878,7 @@ class RangeValues(RangeValuesBase):
         """
         Constraint the range of variables
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(a): assert a >= 1; b = a + 1")
         >>> pm = passmanager.PassManager("test")
@@ -898,7 +898,7 @@ class RangeValues(RangeValuesBase):
 
         We do not handle container values.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(): a = b = 2")
         >>> pm = passmanager.PassManager("test")
@@ -920,7 +920,7 @@ class RangeValues(RangeValuesBase):
     def visit_AugAssign(self, node):
         """ Update range value for augassigned variables.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(): a = 2; a -= 1")
         >>> pm = passmanager.PassManager("test")
@@ -948,7 +948,7 @@ class RangeValues(RangeValuesBase):
     def visit_For(self, node):
         """ Handle iterate variable in for loops.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -1009,7 +1009,7 @@ class RangeValues(RangeValuesBase):
     def visit_While(self, node):
         """ Handle incremented variables in loop body.
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse('''
         ... def foo():
@@ -1075,7 +1075,7 @@ class RangeValues(RangeValuesBase):
     def visit_If(self, node):
         """ Handle iterate variable across branches
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> pm = passmanager.PassManager("test")
 

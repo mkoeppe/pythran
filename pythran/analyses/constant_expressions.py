@@ -7,7 +7,7 @@ from pythran.analyses.pure_expressions import PureExpressions
 from pythran.intrinsic import FunctionIntr
 from pythran.passmanager import NodeAnalysis
 
-import gast as ast
+import ast
 
 
 class ConstantExpressions(NodeAnalysis):

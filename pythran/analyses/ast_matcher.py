@@ -1,6 +1,6 @@
 """ Module to looks for a specified pattern in a given AST. """
 
-from gast import AST, iter_fields, NodeVisitor, Dict, Set
+from ast import AST, iter_fields, NodeVisitor, Dict, Set
 from itertools import permutations
 from math import isnan
 
@@ -170,7 +170,7 @@ class ASTMatcher(NodeVisitor):
 
     Examples
     --------
-    >>> import gast as ast
+    >>> import ast
     >>> code = "[(i, j) for i in range(a) for j in range(b)]"
     >>> pattern = ast.Call(func=ast.Name('range', ctx=ast.Load(),
     ...                                  annotation=None,

@@ -6,7 +6,7 @@ from pythran.analyses import (ImportedIds, HasReturn, IsAssigned, CFG,
 from pythran.passmanager import Transformation
 from pythran.syntax import PythranSyntaxError
 
-import gast as ast
+import ast
 from copy import deepcopy
 
 LOOP_NONE, EARLY_RET, LOOP_BREAK, LOOP_CONT = range(4)

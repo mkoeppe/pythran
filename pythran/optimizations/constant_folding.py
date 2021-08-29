@@ -8,7 +8,7 @@ from pythran.analyses.ast_matcher import DamnTooLongPattern
 from pythran.syntax import PythranSyntaxError
 from pythran.utils import isintegral, isnum
 
-import gast as ast
+import ast
 from copy import deepcopy
 import logging
 
@@ -20,7 +20,7 @@ class ConstantFolding(Transformation):
     """
     Replace constant expression by their evaluation.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(): return 1+3")
     >>> pm = passmanager.PassManager("test")
@@ -54,7 +54,7 @@ class ConstantFolding(Transformation):
         dummy_module = ast.Module([s for s in node.body
                                    if not isinstance(s, ast.Import)],
                                   [])
-        eval(compile(ast.gast_to_ast(dummy_module),
+        eval(compile(dummy_module,
                      '<constant_folding>', 'exec'),
              self.env)
 
@@ -71,7 +71,7 @@ class ConstantFolding(Transformation):
     def generic_visit(self, node):
         if isinstance(node, ast.expr) and node in self.constant_expressions:
             fake_node = ast.Expression(node)
-            code = compile(ast.gast_to_ast(fake_node),
+            code = compile(fake_node,
                            '<constant folding>', 'eval')
             try:
                 value = eval(code, self.env)
@@ -113,7 +113,7 @@ class PartialConstantFolding(Transformation):
     """
     Replace partially constant expression by their evaluation.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
 
     >>> node = ast.parse("def foo(n): return [n] * 2")
@@ -199,7 +199,7 @@ class PartialConstantFolding(Transformation):
 
     def visit_Subscript(self, node):
         """
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> pm = passmanager.PassManager("test")
 

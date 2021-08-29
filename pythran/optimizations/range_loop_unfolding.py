@@ -5,14 +5,14 @@ RangeLoopUnfolding turns unfolded range of non unrolled loops back to range.
 from pythran.passmanager import Transformation
 from pythran.utils import isnum
 
-import gast as ast
+import ast
 
 
 class RangeLoopUnfolding(Transformation):
     """
     Turns iteration over an incrementing list of literals into a range
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("for i in [1,2,3]: print(i)")
     >>> pm = passmanager.PassManager("test")

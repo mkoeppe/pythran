@@ -17,7 +17,7 @@ from pythran.utils import attr_to_path, cxxid, isnum, isextslice, ispowi
 
 from collections import defaultdict
 from functools import partial
-import gast as ast
+import ast
 import operator
 from functools import reduce
 from copy import deepcopy

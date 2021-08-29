@@ -3,13 +3,13 @@
 from pythran.analyses import Ancestors
 from pythran.passmanager import Transformation
 
-import gast as ast
+import ast
 
 
 class NormalizeIfElse(Transformation):
     '''
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("""
     ... def foo(y):

@@ -8,7 +8,7 @@ from pythran.analyses.global_effects import GlobalEffects
 from pythran.passmanager import ModuleAnalysis
 from pythran.intrinsic import Intrinsic
 
-import gast as ast
+import ast
 
 
 class PureExpressions(ModuleAnalysis):

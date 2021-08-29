@@ -4,7 +4,7 @@ Literals lists nodes that are only literals
 
 from pythran.passmanager import FunctionAnalysis
 
-import gast as ast
+import ast
 
 
 class Literals(FunctionAnalysis):

@@ -7,13 +7,13 @@ from pythran.transformations.normalize_tuples import ConvertToTuple
 from pythran.conversion import mangle
 from pythran.utils import attr_to_path, path_to_attr
 
-import gast as ast
+import ast
 
 
 class ComprehensionPatterns(Transformation):
     '''
     Transforms list comprehension into intrinsics.
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(y) : return (x for x in y)")
     >>> pm = passmanager.PassManager("test")

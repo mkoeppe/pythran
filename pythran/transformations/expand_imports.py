@@ -6,7 +6,7 @@ from pythran.conversion import mangle
 from pythran.syntax import PythranSyntaxError
 from pythran.analyses import Ancestors
 
-import gast as ast
+import ast
 
 
 class ExpandImports(Transformation):
@@ -23,7 +23,7 @@ class ExpandImports(Transformation):
 
     Examples
     --------
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("from math import cos ; cos(2)")
     >>> pm = passmanager.PassManager("test")

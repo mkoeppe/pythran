@@ -5,7 +5,7 @@ from pythran.passmanager import Transformation
 
 import pythran.metadata as metadata
 
-import gast as ast
+import ast
 from functools import reduce
 
 
@@ -13,7 +13,7 @@ class RemoveComprehension(Transformation):
     """
     Turns all list comprehension from a node into new function calls.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("[x*x for x in (1,2,3)]")
     >>> pm = passmanager.PassManager("test")

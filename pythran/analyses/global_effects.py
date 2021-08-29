@@ -7,7 +7,7 @@ from pythran.tables import MODULES
 from pythran.graph import DiGraph
 import pythran.intrinsic as intrinsic
 
-import gast as ast
+import ast
 from functools import reduce
 
 

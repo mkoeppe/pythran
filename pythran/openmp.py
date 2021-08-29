@@ -9,8 +9,8 @@ import pythran.metadata as metadata
 from pythran.types.conversion import PYTYPE_TO_CTYPE_TABLE
 from pythran.utils import isstr
 
-from gast import AST
-import gast as ast
+from ast import AST
+import ast
 import re
 
 typenames = {t.__name__: t for t in PYTYPE_TO_CTYPE_TABLE}

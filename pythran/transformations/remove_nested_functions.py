@@ -7,7 +7,7 @@ from pythran.conversion import mangle
 
 import pythran.metadata as metadata
 
-import gast as ast
+import ast
 
 
 class _NestedFunctionRemover(ast.NodeTransformer):
@@ -91,7 +91,7 @@ class RemoveNestedFunctions(Transformation):
     Also add a call to a bind intrinsic that
     generates a local function with some arguments binded.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(x):\\n def bar(y): return x+y\\n bar(12)")
     >>> pm = passmanager.PassManager("test")

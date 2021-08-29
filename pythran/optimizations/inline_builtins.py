@@ -9,7 +9,7 @@ from pythran.utils import path_to_attr, path_to_node
 from pythran.syntax import PythranSyntaxError
 
 from copy import deepcopy
-import gast as ast
+import ast
 
 
 class InlineBuiltins(Transformation):
@@ -19,7 +19,7 @@ class InlineBuiltins(Transformation):
 
     This may trigger some extra optimizations later on!
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> pm = passmanager.PassManager("test")
     >>> node = ast.parse('''

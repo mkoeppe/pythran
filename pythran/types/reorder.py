@@ -1,6 +1,6 @@
 """ Reorder top-level functions to prevent circular type dependencies.  """
 
-import gast as ast
+import ast
 
 from pythran.analyses import OrderedGlobalDeclarations
 from pythran.passmanager import Transformation

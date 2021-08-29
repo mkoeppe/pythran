@@ -3,7 +3,7 @@
 from pythran.analyses import CFG, YieldPoints
 from pythran.passmanager import Transformation
 
-import gast as ast
+import ast
 
 
 class NormalizeReturn(Transformation):
@@ -11,7 +11,7 @@ class NormalizeReturn(Transformation):
     Adds Return statement when they are implicit,
     and adds the None return value when not set
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(y): print(y)")
     >>> pm = passmanager.PassManager("test")

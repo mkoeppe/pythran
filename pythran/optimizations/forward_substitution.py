@@ -9,7 +9,7 @@ from pythran.passmanager import Transformation
 import pythran.graph as graph
 
 from collections import defaultdict
-import gast as ast
+import ast
 
 try:
     from math import isfinite
@@ -41,7 +41,7 @@ class ForwardSubstitution(Transformation):
     """
     Replace variable that can be computed later.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> pm = passmanager.PassManager("test")
 

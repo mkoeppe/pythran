@@ -28,7 +28,7 @@ from distutils import sysconfig
 from numpy.distutils.core import setup
 
 from tempfile import mkdtemp, NamedTemporaryFile
-import gast as ast
+import ast
 import logging
 import os.path
 import shutil

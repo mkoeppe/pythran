@@ -5,7 +5,7 @@ ExtractDocStrings fills a dictionary with doc strings for each function.
 from pythran.passmanager import Transformation
 from pythran.utils import isstr
 
-import gast as ast
+import ast
 
 
 class ExtractDocStrings(Transformation):
@@ -13,7 +13,7 @@ class ExtractDocStrings(Transformation):
     Extract Python Doc Strings, removing them from the AST and putting them in
     a dictionary for later use.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(): 'my doc is cool' ; pass")
     >>> pm = passmanager.PassManager("test")
