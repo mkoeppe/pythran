@@ -5,7 +5,7 @@ from pythran.passmanager import Transformation
 from pythran.syntax import PythranSyntaxError
 from pythran.tables import MODULES
 
-import gast as ast
+import ast
 
 
 class ExpandBuiltins(Transformation):
@@ -13,7 +13,7 @@ class ExpandBuiltins(Transformation):
     """
     Expands all builtins into full paths.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(): return list()")
     >>> pm = passmanager.PassManager("test")

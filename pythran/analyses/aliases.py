@@ -10,7 +10,7 @@ from pythran.conversion import demangle
 import pythran.metadata as md
 from pythran.utils import isnum
 
-import gast as ast
+import ast
 from copy import deepcopy
 from itertools import product
 import io

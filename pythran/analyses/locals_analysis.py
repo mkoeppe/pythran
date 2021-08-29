@@ -5,7 +5,7 @@ Locals computes the value of locals()
 from pythran.passmanager import ModuleAnalysis
 import pythran.metadata as md
 
-import gast as ast
+import ast
 
 
 class Locals(ModuleAnalysis):
@@ -16,7 +16,7 @@ class Locals(ModuleAnalysis):
     *before* this node.
 
     Following snippet illustrates its behavior:
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager
     >>> pm = passmanager.PassManager('test')
     >>> code = '''

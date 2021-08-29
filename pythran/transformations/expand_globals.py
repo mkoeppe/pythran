@@ -10,7 +10,7 @@ from pythran.syntax import PythranSyntaxError
 from pythran.utils import path_to_attr
 from pythran import metadata
 
-import gast as ast
+import ast
 
 class GlobalTransformer(ast.NodeTransformer):
     '''
@@ -34,7 +34,7 @@ class ExpandGlobals(Transformation):
     """
     Expands all builtins into full paths.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('''
     ... a = 1

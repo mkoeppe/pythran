@@ -8,7 +8,7 @@ from pythran.syntax import PythranSyntaxError
 from pythran.intrinsic import ConstantIntr, FunctionIntr
 from pythran import metadata
 
-import gast as ast
+import ast
 
 
 def is_global_constant(node):

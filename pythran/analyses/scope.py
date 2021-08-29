@@ -7,7 +7,7 @@ from pythran.analyses.use_def_chain import DefUseChains
 from pythran.passmanager import FunctionAnalysis
 
 from collections import defaultdict
-import gast as ast
+import ast
 
 
 class Scope(FunctionAnalysis):

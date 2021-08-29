@@ -5,7 +5,7 @@ from pythran.analyses.ast_matcher import ASTMatcher, AST_any
 from pythran.conversion import mangle
 from pythran.utils import isnum
 
-import gast as ast
+import ast
 import copy
 
 
@@ -14,7 +14,7 @@ class Square(Transformation):
     """
     Replaces **2 by a call to numpy.square.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('a**2')
     >>> pm = passmanager.PassManager("test")

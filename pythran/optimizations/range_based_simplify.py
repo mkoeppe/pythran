@@ -3,7 +3,7 @@
 from pythran.analyses import RangeValues
 from pythran.passmanager import Transformation
 
-import gast as ast
+import ast
 from math import isinf
 from copy import deepcopy
 
@@ -12,7 +12,7 @@ class RangeBasedSimplify(Transformation):
     '''
     Simplify expressions based on range analysis
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
 
     >>> node = ast.parse("def any():\\n for x in builtins.range(10): y=x%8")

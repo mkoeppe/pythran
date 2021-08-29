@@ -8,7 +8,7 @@ from pythran.graph import DiGraph
 # FIXME: investigate why we need to import it that way
 from pythran import intrinsic
 
-import gast as ast
+import ast
 from functools import reduce
 
 

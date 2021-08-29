@@ -5,7 +5,7 @@ from pythran.analyses import Identifiers
 from pythran.passmanager import Transformation
 from pythran.tables import MODULES
 
-import gast as ast
+import ast
 from copy import deepcopy
 
 
@@ -13,7 +13,7 @@ class ModIndex(Transformation):
     '''
     Simplify modulo on loop index
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> pm = passmanager.PassManager("test")
     >>> code = """

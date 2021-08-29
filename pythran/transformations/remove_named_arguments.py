@@ -5,7 +5,7 @@ from pythran.passmanager import Transformation
 from pythran.syntax import PythranSyntaxError
 from pythran.tables import MODULES
 
-import gast as ast
+import ast
 from copy import deepcopy
 
 
@@ -19,7 +19,7 @@ class RemoveNamedArguments(Transformation):
     '''
     Replace call with named arguments to regular calls
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> code = 'def foo(x, y): return x + y\\ndef bar(z): return foo(y=z, x=0)'
     >>> node = ast.parse(code)

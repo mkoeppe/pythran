@@ -3,7 +3,7 @@
 from pythran.analyses import Inlinable, Aliases
 from pythran.passmanager import Transformation
 
-import gast as ast
+import ast
 import copy
 
 
@@ -12,7 +12,7 @@ class Inlining(Transformation):
     """
     Inline one line functions.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> pm = passmanager.PassManager("test")
     >>> node = ast.parse('''

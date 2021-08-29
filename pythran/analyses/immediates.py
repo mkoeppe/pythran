@@ -1,7 +1,7 @@
 """ Immediates gathers immediates. For now, only integers within shape are
 considered as immediates """
 
-import gast as ast
+import ast
 from pythran.tables import MODULES
 from pythran.analyses import Aliases
 from pythran.passmanager import NodeAnalysis

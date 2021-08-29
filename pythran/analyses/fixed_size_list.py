@@ -6,7 +6,7 @@ This could be a type information, but it seems easier to implement it that way
 from pythran.passmanager import FunctionAnalysis
 from pythran.tables import MODULES
 
-import gast as ast
+import ast
 
 
 class FixedSizeList(FunctionAnalysis):

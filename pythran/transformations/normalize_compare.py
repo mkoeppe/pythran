@@ -6,7 +6,7 @@ from pythran.utils import path_to_attr
 
 import pythran.metadata as metadata
 
-import gast as ast
+import ast
 
 
 def is_trivially_copied(node):
@@ -24,7 +24,7 @@ class NormalizeCompare(Transformation):
     '''
     Turns multiple compare into a function with proper temporaries.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(a): return 0 < a + 1 < 3")
     >>> pm = passmanager.PassManager("test")

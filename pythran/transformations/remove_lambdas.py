@@ -8,7 +8,7 @@ from pythran.conversion import mangle
 import pythran.metadata as metadata
 
 from copy import copy
-import gast as ast
+import ast
 
 
 class _LambdaRemover(ast.NodeTransformer):
@@ -68,7 +68,7 @@ class RemoveLambdas(Transformation):
     """
     Turns lambda into top-level functions.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(y): lambda x:y+x")
     >>> pm = passmanager.PassManager("test")

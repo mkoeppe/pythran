@@ -7,14 +7,14 @@ from pythran.conversion import to_ast
 from pythran.passmanager import Transformation
 
 from copy import deepcopy
-import gast as ast
+import ast
 
 
 class LoopFullUnrolling(Transformation):
     '''
     Fully unroll loops with static bounds
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('for j in [1,2,3]: i += j')
     >>> pm = passmanager.PassManager("test")

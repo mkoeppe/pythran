@@ -1,6 +1,6 @@
 """ This modules provides the translation tables from python to c++. """
 
-import gast as ast
+import ast
 import inspect
 import logging
 import sys

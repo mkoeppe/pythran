@@ -10,7 +10,7 @@ from pythran.utils import get_variable, isattr
 import pythran.metadata as md
 import pythran.openmp as openmp
 
-import gast as ast
+import ast
 import sys
 
 
@@ -24,7 +24,7 @@ class LazynessAnalysis(FunctionAnalysis):
     its last use or if it is use in a function call (as it is not an
     interprocedural analysis)
 
-    >>> import gast as ast, sys
+    >>> import ast, sys
     >>> from pythran import passmanager, backend
     >>> code = "def foo(): c = 1; a = c + 2; c = 2; b = c + c + a; return b"
     >>> node = ast.parse(code)

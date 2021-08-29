@@ -2,7 +2,7 @@
 
 from pythran.passmanager import Transformation
 
-import gast as ast
+import ast
 
 def getid(node):
     if isinstance(node, ast.Attribute):
@@ -16,7 +16,7 @@ class SimplifyExcept(Transformation):
     """
     Remove redundant except clauses
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('try: pass\\nexcept (OSError, OSError): pass')
     >>> pm = passmanager.PassManager("test")

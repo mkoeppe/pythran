@@ -5,7 +5,7 @@ from pythran.tables import MODULES
 from pythran.passmanager import Transformation
 from pythran.utils import path_to_attr
 
-import gast as ast
+import ast
 
 patterns = (MODULES['numpy']['full'],
             MODULES['numpy']['ones'],
@@ -29,7 +29,7 @@ class ListToTuple(Transformation):
     """
     Replace list nodes by tuple nodes when possible
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(n): import numpy; return numpy.ones([n,n])")
     >>> pm = passmanager.PassManager("test")
@@ -69,7 +69,7 @@ class ListToTuple(Transformation):
         """
         Replace list calls by static_list calls when possible
 
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> node = ast.parse("def foo(n):\\n"
         ...                  "    x = builtins.list(n)\\n"

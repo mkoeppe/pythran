@@ -3,7 +3,7 @@
 from pythran.passmanager import Transformation
 from pythran.analyses import DefUseChains, UseDefChains, Identifiers
 
-import gast as ast
+import ast
 
 
 class FalsePolymorphism(Transformation):
@@ -11,7 +11,7 @@ class FalsePolymorphism(Transformation):
     """
     Rename variable when possible to avoid false polymorphism.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(): a = 12; a = 'babar'")
     >>> pm = passmanager.PassManager("test")

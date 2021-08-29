@@ -5,7 +5,7 @@ from pythran.analyses import Check, Placeholder
 from pythran.passmanager import Transformation
 
 from copy import deepcopy
-import gast as ast
+import ast
 
 
 class Pattern(object):

@@ -4,7 +4,7 @@ from pythran.passmanager import FunctionAnalysis
 from pythran.utils import isnum
 from pythran.graph import DiGraph
 
-import gast as ast
+import ast
 
 
 def is_true_predicate(node):

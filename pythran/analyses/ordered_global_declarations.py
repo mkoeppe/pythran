@@ -4,7 +4,7 @@ from pythran.analyses.aliases import StrictAliases
 from pythran.analyses.global_declarations import GlobalDeclarations
 from pythran.passmanager import ModuleAnalysis
 
-import gast as ast
+import ast
 
 
 class OrderedGlobalDeclarations(ModuleAnalysis):

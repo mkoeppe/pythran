@@ -5,7 +5,7 @@ from pythran.analyses import Identifiers
 from pythran.analyses.pure_expressions import PureExpressions
 import pythran.metadata as metadata
 
-import gast as ast
+import ast
 import copy
 
 

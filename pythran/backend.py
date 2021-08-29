@@ -25,7 +25,7 @@ from pythran.utils import isextslice, ispowi
 from pythran import metadata, unparse
 
 from math import isnan, isinf
-import gast as ast
+import ast
 import os
 from functools import reduce
 import io
@@ -35,7 +35,7 @@ class Python(Backend):
     '''
     Produces a Python representation of the AST.
 
-    >>> import gast as ast, pythran.passmanager as passmanager
+    >>> import ast, pythran.passmanager as passmanager
     >>> node = ast.parse("print('hello world')")
     >>> pm = passmanager.PassManager('test')
     >>> print(pm.dump(Python, node))
@@ -1273,7 +1273,7 @@ class Cxx(Backend):
     """
     Produces a C++ representation of the AST.
 
-    >>> import gast as ast, pythran.passmanager as passmanager, os
+    >>> import ast, pythran.passmanager as passmanager, os
     >>> node = ast.parse("def foo(): return 'hello world'")
     >>> pm = passmanager.PassManager('test')
     >>> r = pm.dump(Cxx, node)

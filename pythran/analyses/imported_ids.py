@@ -5,7 +5,7 @@ from pythran.analyses.locals_analysis import Locals
 from pythran.passmanager import NodeAnalysis
 import pythran.metadata as md
 
-import gast as ast
+import ast
 
 
 class ImportedIds(NodeAnalysis):

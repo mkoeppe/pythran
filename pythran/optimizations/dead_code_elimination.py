@@ -5,7 +5,7 @@ from pythran.openmp import OMPDirective
 from pythran.passmanager import Transformation
 import pythran.metadata as metadata
 
-import gast as ast
+import ast
 
 
 class ClumsyOpenMPDependencyHandler(ast.NodeVisitor):
@@ -27,7 +27,7 @@ class DeadCodeElimination(Transformation):
         - remove alone pure statement
         - remove empty if
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> pm = passmanager.PassManager("test")
     >>> node = ast.parse("def foo(): a = [2, 3]; return 1")

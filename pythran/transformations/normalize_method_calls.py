@@ -8,7 +8,7 @@ from pythran.tables import duplicated_methods
 from pythran.conversion import mangle, demangle
 from pythran.utils import isstr
 
-import gast as ast
+import ast
 from functools import reduce
 
 
@@ -16,7 +16,7 @@ class NormalizeMethodCalls(Transformation):
     '''
     Turns built in method calls into function calls.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("[].append(12)")
     >>> pm = passmanager.PassManager("test")

@@ -1,6 +1,6 @@
 """ Module to manage dependencies between pythran types. """
 
-import gast as ast
+import ast
 import itertools
 import os
 
@@ -60,7 +60,7 @@ class TypeDependencies(ModuleAnalysis):
     between nodes when a function might call another.
 
     Check usual behavior.
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager
     >>> pm = passmanager.PassManager("test")
     >>> node = ast.parse('''

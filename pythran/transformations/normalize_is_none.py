@@ -5,7 +5,7 @@ from pythran.analyses import Ancestors
 from pythran.syntax import PythranSyntaxError
 from functools import reduce
 
-import gast as ast
+import ast
 
 
 def is_none(expr):

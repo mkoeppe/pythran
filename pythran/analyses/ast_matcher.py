@@ -170,7 +170,7 @@ class ASTMatcher(NodeVisitor):
 
     Examples
     --------
-    >>> import gast as ast
+    >>> import ast
     >>> code = "[(i, j) for i in range(a) for j in range(b)]"
     >>> pattern = ast.Call(func=ast.Name('range', ctx=ast.Load(),
     ...                                  annotation=None,

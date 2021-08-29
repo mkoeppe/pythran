@@ -19,7 +19,7 @@ class IterTransformation(Transformation):
     """
     Replaces expressions by iterators when possible.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse('''
     ... def foo(l):

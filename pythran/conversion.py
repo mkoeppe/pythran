@@ -1,6 +1,6 @@
 """ This module provides way to convert a Python value into an ast. """
 
-import gast as ast
+import ast
 import numpy as np
 import numbers
 

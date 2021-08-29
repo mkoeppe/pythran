@@ -2,7 +2,7 @@
 # http://smallshire.org.uk/sufficientlysmall/2010/04/11/\
 #       a-hindley-milner-type-inference-implementation-in-python/
 
-import gast as ast
+import ast
 from copy import deepcopy
 
 from numpy import floating, integer, complexfloating

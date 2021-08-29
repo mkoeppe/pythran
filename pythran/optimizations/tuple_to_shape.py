@@ -5,7 +5,7 @@ from pythran.tables import MODULES
 from pythran.passmanager import Transformation
 from pythran.utils import pythran_builtin_attr
 
-import gast as ast
+import ast
 
 patterns = (MODULES['numpy']['full'],
             MODULES['numpy']['ones'],
@@ -29,7 +29,7 @@ class TupleToShape(Transformation):
     """
     Replace tuple nodes by shape when relevant
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(n): import numpy; return numpy.ones((n,4))")
     >>> pm = passmanager.PassManager("test")

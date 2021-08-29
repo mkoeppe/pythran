@@ -8,7 +8,7 @@ from pythran.analyses.ast_matcher import DamnTooLongPattern
 from pythran.syntax import PythranSyntaxError
 from pythran.utils import isintegral, isnum
 
-import gast as ast
+import ast
 from copy import deepcopy
 import logging
 
@@ -20,7 +20,7 @@ class ConstantFolding(Transformation):
     """
     Replace constant expression by their evaluation.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
     >>> node = ast.parse("def foo(): return 1+3")
     >>> pm = passmanager.PassManager("test")
@@ -113,7 +113,7 @@ class PartialConstantFolding(Transformation):
     """
     Replace partially constant expression by their evaluation.
 
-    >>> import gast as ast
+    >>> import ast
     >>> from pythran import passmanager, backend
 
     >>> node = ast.parse("def foo(n): return [n] * 2")
@@ -199,7 +199,7 @@ class PartialConstantFolding(Transformation):
 
     def visit_Subscript(self, node):
         """
-        >>> import gast as ast
+        >>> import ast
         >>> from pythran import passmanager, backend
         >>> pm = passmanager.PassManager("test")
 
