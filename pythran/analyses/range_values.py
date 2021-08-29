@@ -377,7 +377,7 @@ class RangeValuesBase(ModuleAnalysis):
                                [ast.Name('y', ast.Load(), None, None)])
             fake = ast.Expression(fake)
             ast.fix_missing_locations(fake)
-            expr = compile(ast.gast_to_ast(fake), '<range_values>', 'eval')
+            expr = compile(fake, '<range_values>', 'eval')
             res.append(eval(expr, {'x': curr, 'y': comparator}))
         if all(res):
             return self.add(node, Interval(1, 1))

@@ -93,7 +93,7 @@ class LoopFullUnrolling(Transformation):
                 self.update = True
                 return sum([unroll(elt, dc(node.body, i, elts_count))
                             for i, elt in enumerate(node.iter.elts)], [])
-        code = compile(ast.gast_to_ast(ast.Expression(node.iter)),
+        code = compile(ast.Expression(node.iter),
                        '<loop unrolling>', 'eval')
         try:
             values = list(eval(code, {'builtins': __import__('builtins')}))
